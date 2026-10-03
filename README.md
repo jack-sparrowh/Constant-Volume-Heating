@@ -7,4 +7,10 @@ By providing initial parameters like temperature, pressure and liquid level as w
 
 It is assumed that isothermal compressibility of liquid is 0. The reason being that usually density functions for liquids do not provide pressure dependence (I have never seen one that does).
 
-Code is somewhat rough as I whipped it in short time.
+Main assumptions:
+1. The isothermal compressibility is 0.
+2. Rault's Law is applicable in all ranges of pressure and temperature.
+3. Nitrogen is insoluble in liquid.
+4. Ideal gas Law is aplicable to both nitrogen and liquid vapor.
+
+Code is somewhat rough as I whipped it in short time as it is mostly a draft of an idea for future blog post.
