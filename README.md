@@ -14,3 +14,5 @@ Main assumptions:
 4. Ideal gas Law is aplicable to both nitrogen and liquid vapor.
 
 Code is somewhat rough as I whipped it in short time as it is mostly a draft of an idea for future blog post.
+
+Instead of providing number of steps for the iteration or step size I decided to go with dynamic step size given the logarithmic nature of T-P relation. You provide maximum step in temperature, and python finds related step size of pressure.
