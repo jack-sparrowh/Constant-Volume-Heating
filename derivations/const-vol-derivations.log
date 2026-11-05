@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.27)  5 NOV 2026 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.27)  5 NOV 2026 18:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -210,18 +210,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 2576 strings out of 469515
- 38335 string characters out of 5470807
+ 2578 strings out of 469515
+ 38356 string characters out of 5470807
  444612 words of memory out of 5000000
- 31235 multiletter control sequences out of 15000+600000
- 632035 words of font info for 55 fonts, out of 8000000 for 9000
+ 31236 multiletter control sequences out of 15000+600000
+ 632343 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,6n,65p,238b,201s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on const-vol-derivations.pdf (1 page, 43242 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on const-vol-derivations.pdf (1 page, 54802 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 16 compressed objects within 1 object stream
+ 33 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
