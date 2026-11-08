@@ -10,5 +10,89 @@
 	\tableofcontents
 
 	\section{Introduction}
+	During one of projects I and other engineers were tasked with sizing pressure relief deice (PRD). For two phase relief of foamy fluids we were told to use ChemCad package FERST Fauske. We had internal procedures to follow to calculate "conservaitve" results (I won't expand on why it's in quotes), but there were some problems with finding the right liquid swell. The software sometimes gave the error that there is more liquid in the tank than the tank's volume itself. This send me on a hunt for solution as no one could answer my simple question: why?
+
+	%provide some examples of those articles
+	There is a great deal of articles from people associated with DIERS and Fauske Association that were mentioning one thing over an over again, there is a lower bound on the maximum liquid level in the tank above which no matter if fluid is foamy or not, we should size the PRD for two phase flow. This means that liquid swell is a very important parameter to get right in order to size any PRD correctly. Getting errors and then tinkering with input properties to get rid of them doesn't seem like a right solution, thus, my drive to derive it once and for all.
+
+	\section{Assumptions}
+
+	We start with a tank of volume $V$ that is filled with liquid to some level $\lambda$ with the rest of the tanks volume being filled by nitrogen blanketing. If all of inlet/outlet valves are closed and we now provide external heating (fire for example) then we are dealing with isochoric heat addition process.
+
+	Let us also make few assumptions needed:
+
+	\begin{enumerate}
+		\item Tank volume is constant and material its made of is non elastic.
+		\item Nitrogen and liquid vapors can be treated as ideal gas.
+		\item Amagat's and Rault's laws are applicable.
+		\item Liquid in tank is incompressible.
+		\item Nitrogen is insoluble in liquid.
+		\item Liquid, vapor and nitrogen are in mechanical and thermal equillibrium.
+		\item Liquid and vapor are in phase equillibrium at each iteration step.
+		\item Mixture in the tank can be treated as ideal solution.
+	\end{enumerate}
+
+	\section{Derivation}
+	\subsection{Basics}
+	\label{sec:basics}
+
+	We have already stated, that the process is isochoric in nature. Mathematically:
+
+	\begin{equation*}
+		dV = 0
+	\end{equation*}
+	
+	Because of our assumptions we can write that the total volume is a sum of all the volumes of the system, thus:
+
+	\begin{equation*}
+		dV = dV_{liquid} + dV_{gases}
+	\end{equation*}
+
+	where we will write $V_{l}$ and $V_{g}$ for short. By Amagat's law we have that:
+
+	\begin{equation*}
+		dV_{g} = dV_{N_{2}} + dV_{v}
+	\end{equation*}
+
+	and so, to sum it up, our system must follow:
+
+	\begin{equation*}
+		dV = dV_{l} + dV_{v} + dV_{N_{2}} = 0
+	\end{equation*}
+
+	Now, we can find each component differential volume change in $(T, P)$ plug it in and solve. For each component volume we have that $V_{i} = m_{i} v_{i}$, and so we can analyze it further:
+
+	\begin{equation*}
+		dV_{i} = m_{i} dv_{i} + v_{i} dm_{i}
+	\end{equation*}
+
+	This immediatelly tells us that the change in volume of components is due to change in specific volume but also in mass change, which will be true only for liquid and it's vapor, but nitrogen mass is constant throughout the process.
+
+	We now write that the total differential for any component $dv_{i}$ is:
+
+	\begin{equation*}
+		dv_{i} = \left( \frac{\partial{v_{i}}}{\partial{T}} \right)_{P, m_{j}} +
+		\left( \frac{\partial{v_{i}}}{\partial{P}} \right)_{T, m_{j}} +
+		\left( \frac{\partial{v_{i}}}{\partial{m_{i}}} \right)_{T, P, m_{j}}
+	\end{equation*}
+
+	Because of assumption (8), we can drop partial specific volume and have this headache dealt with right out of the gate.
+	For the mass total differential we can use the property that sum of liquid and vapor must be equal to total fluid mass that we filled the tank with. In other words, because $m = m_{l} + m_{v}$, we can write,
+
+	\begin{equation*}
+		dm_{l} = -dm_{v}
+	\end{equation*}
+
+	and
+
+	\begin{equation*}
+		dm_{v} = \left( \frac{\partial{m_{v}}}{\partial{T}} \right)_{P} +
+		\left( \frac{\partial{m_{v}}}{\partial{P}} \right)_{T}
+	\end{equation*}
+
+
+
+	\section{References}
+
 
 \end{document}
