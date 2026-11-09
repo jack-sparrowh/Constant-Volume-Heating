@@ -71,9 +71,9 @@
 	We now write that the total differential for any component $dv_{i}$ is:
 
 	\begin{equation*}
-		dv_{i} = \left( \frac{\partial{v_{i}}}{\partial{T}} \right)_{P, m_{j}} +
-		\left( \frac{\partial{v_{i}}}{\partial{P}} \right)_{T, m_{j}} +
-		\left( \frac{\partial{v_{i}}}{\partial{m_{i}}} \right)_{T, P, m_{j}}
+		dv_{i} = \left( \frac{\partial{v_{i}}}{\partial{T}} \right)_{P, mf_{j}} dT +
+		\left( \frac{\partial{v_{i}}}{\partial{P}} \right)_{T, mf_{j}} dP +
+		\left( \frac{\partial{v_{i}}}{\partial{mf_{i}}} \right)_{T, P, mf_{j}} dmf_{i}
 	\end{equation*}
 
 	Because of assumption (8), we can drop partial specific volume and have this headache dealt with right out of the gate.
@@ -86,11 +86,88 @@
 	and
 
 	\begin{equation*}
-		dm_{v} = \left( \frac{\partial{m_{v}}}{\partial{T}} \right)_{P} +
-		\left( \frac{\partial{m_{v}}}{\partial{P}} \right)_{T}
+		dm_{v} = \left( \frac{\partial{m_{v}}}{\partial{T}} \right)_{P} dT +
+		\left( \frac{\partial{m_{v}}}{\partial{P}} \right)_{T} dP
 	\end{equation*}
 
+	We will start from the easiest of differentials, a nitrogen one.
 
+	\subsection{Nitrogen volume differential}
+	\label{sec:nitrogen}
+
+	For the nitrogen, its mass is held constant during the process and so the volume change is related only to specific volume change.
+	Because of assumption (2) we can immediatelly write that:
+
+	\begin{equation*}
+		dV_{N_{2}} = m_{N_{2}} dv_{N_{2}} =
+		m_{N_{2}} \left( \frac{R_{N_{2}}}{P} dT - \frac{R_{N_{2}} T}{P^{2}} dP \right)
+	\end{equation*}
+
+	and that's it.
+
+	\subsection{Vapor volume differential}
+	\label{sec:dVv}
+
+	\subsubsection{Vapor mass differential $dm_{v}$}
+	\label{sec:dmv}
+
+	Because of assumptions (3), (7) and (8) we can write that the molar fraction of vapor in nitrogen blanketing is:
+
+	\begin{equation*}
+		y_{v} = \frac{P_{sat}(T)}{P}
+	\end{equation*}
+
+	and because we are dealing with only nitrogen and vapor $y_{N_{2}} = 1 - y_{v}$ which gives us that the mass fraction is:
+
+	\begin{equation*}
+		mf_{v} = \frac{y_{v} M_{v}}{M_{N_{2}} + (M_{v} - M_{N_{2}}) y_{v}}
+	\end{equation*}
+
+	Because nitrogen mass is related to total gas mixture by $m_{N_{2}} = mf_{N_{2}} \cdot (m_{v} + m_{N_{2}})$ we can finally write that vapor mass is:
+
+	\begin{equation*}
+		m_{v} = \frac{mf_{v}}{1 - mf_{v}} m_{N_{2}}
+	\end{equation*}
+
+	We will be, in the end, solving it all iteratively and so there is no reason to find exact partial derivatives.
+
+	\subsubsection{Vapos spec. volume differential}
+	\label{sec:dvv}
+
+	We haveve assumed that we can treat vapor as ideal gas by (2) which gives us similar solution like in nitrogen case, and so we have:
+
+	\begin{equation*}
+		dv_{v} = \frac{R_{v}}{P} dT - \frac{R_{v} T}{P^{2}} dP
+	\end{equation*}
+
+	\subsection{Liquid volume differential}
+	\label{sec:dVl}
+
+	We write that total differential of specific volume of liquid is:
+
+	\begin{equation*}
+		dv_{l} = v_{l} \beta dT - v_{l} \alpha dP
+	\end{equation*}
+
+	and because of (4) we can drop pressure dependency here. We have already derived its mass differential in (\ref{sec:dmv}). Basically, we can start to construct parametric curve for the process.
+
+	\section{Process path}
+	\label{sec:proces path}
+
+	We will now list all volume differentials one by one.
+
+	\begin{equation*}
+		\begin{aligned}
+			dV_{l} &= \left[ (m - m_{v}) v_{l} \beta - v_{l} \left( \frac{\partial{m_{v}}}{\partial{T}} \right)_{P} \right] dT -
+			v_{l} \left( \frac{\partial{m_{v}}}{\partial{P}} \right)_{T} dP \\
+			\\
+			dV_{v} &= \frac{R_{v}}{P} \left[ m_{v} + T \left( \frac{\partial{m_{v}}}{\partial{T}} \right)_{P} \right] dT +
+			\frac{R_{v} T}{P} \left[ \left( \frac{\partial{m_{v}}}{\partial{P}} \right)_{T} - \frac{m_{v}}{P} \right] dP \\
+			\\
+			dV_{N_{2}} &=
+			m_{N_{2}} \left( \frac{R_{N_{2}}}{P} dT - \frac{R_{N_{2}} T}{P^{2}} dP \right)
+		\end{aligned}
+	\end{equation*}
 
 	\section{References}
 

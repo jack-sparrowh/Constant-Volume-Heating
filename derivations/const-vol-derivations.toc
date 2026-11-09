@@ -2,4 +2,10 @@
 \contentsline {section}{\numberline {2}Assumptions}{1}{}%
 \contentsline {section}{\numberline {3}Derivation}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Basics}{2}{}%
-\contentsline {section}{\numberline {4}References}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Nitrogen volume differential}{3}{}%
+\contentsline {subsection}{\numberline {3.3}Vapor volume differential}{3}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Vapor mass differential $dm_{v}$}{3}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Vapos spec. volume differential}{3}{}%
+\contentsline {subsection}{\numberline {3.4}Liquid volume differential}{3}{}%
+\contentsline {section}{\numberline {4}Process path}{3}{}%
+\contentsline {section}{\numberline {5}References}{4}{}%
